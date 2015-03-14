@@ -9,6 +9,7 @@ public class Solution {
         int n = in.nextInt(),k = in.nextInt();
         songs = new Song[n];
         for(int i=0;i<n;i++){
+           songs[i] = new Song();
            songs[i].time = in.nextInt();
            songs[i].timer= in.nextInt();
            if(i<k)songs[i].endtime = songs[i].time +songs[i].timer;
@@ -26,7 +27,7 @@ public class Solution {
         return min;
     }
     
-    private class Song{
+    private static class Song{
         int timer, time, endtime;
     }
 }
