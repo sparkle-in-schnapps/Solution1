@@ -18,7 +18,8 @@ public class Solution {
             if (i < k) {
                 songs[i].endtime = songs[i].time + songs[i].timer;
             } else {
-                songs[i].endtime = min(i - k, i) + songs[i].timer;
+                if(songs[i-1].endtime>songs[i].time)songs[i].endtime = min(i - k, i) + songs[i].timer;
+                else songs[i].endtime = songs[i].time + songs[i].timer;
             }
         }
 
